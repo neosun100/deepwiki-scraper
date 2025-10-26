@@ -57,8 +57,12 @@ const translations = {
         
         // 页脚
         madeWith: 'Made with ❤️ by',
+        starCTA: '🌟 给我们一个 Star！',
+        starMessage: '如果这个项目对你有帮助，请在 GitHub 上给它一个 ⭐ Star！',
+        reportBug: '报告 Bug',
+        requestFeature: '请求新功能',
     },
-    
+
     'zh-TW': {
         title: 'DeepWiki Scraper',
         subtitle: '將 DeepWiki 項目文檔抓取並合併為單個 Markdown 文件',
@@ -104,10 +108,14 @@ const translations = {
         errorTitle: '❌ 抓取失敗',
         errorNoKeys: '請先配置 API 密鑰！',
         errorNoUrl: '請輸入項目地址！',
-        
+
         madeWith: 'Made with ❤️ by',
+        starCTA: '🌟 給我們一個 Star！',
+        starMessage: '如果這個項目對你有幫助，請在 GitHub 上給它一個 ⭐ Star！',
+        reportBug: '回報 Bug',
+        requestFeature: '請求新功能',
     },
-    
+
     'en': {
         title: 'DeepWiki Scraper',
         subtitle: 'Scrape and merge DeepWiki project documentation into a single Markdown file',
@@ -153,10 +161,14 @@ const translations = {
         errorTitle: '❌ Scraping Failed',
         errorNoKeys: 'Please configure API keys first!',
         errorNoUrl: 'Please enter project URL!',
-        
+
         madeWith: 'Made with ❤️ by',
+        starCTA: '🌟 Give Us a Star!',
+        starMessage: 'If this project helps you, please give it a ⭐ Star on GitHub!',
+        reportBug: 'Report Bug',
+        requestFeature: 'Request Feature',
     },
-    
+
     'ja': {
         title: 'DeepWiki Scraper',
         subtitle: 'DeepWiki プロジェクトドキュメントをスクレイピングして単一の Markdown ファイルに統合',
@@ -202,8 +214,12 @@ const translations = {
         errorTitle: '❌ スクレイピング失敗',
         errorNoKeys: 'まず API キーを設定してください！',
         errorNoUrl: 'プロジェクト URL を入力してください！',
-        
+
         madeWith: 'Made with ❤️ by',
+        starCTA: '🌟 スターをお願いします！',
+        starMessage: 'このプロジェクトが役に立った場合は、GitHubで ⭐ スターをお願いします！',
+        reportBug: 'バグ報告',
+        requestFeature: '機能リクエスト',
     }
 };
 

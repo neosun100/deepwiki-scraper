@@ -451,6 +451,103 @@ body {
     color: #764ba2;
 }
 
+/* GitHub Badges */
+.github-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.github-badges a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.github-badges a:hover {
+    transform: translateY(-2px);
+}
+
+.github-badges img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* Star CTA */
+.star-cta {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.star-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    background: var(--primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.star-cta p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.star-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.star-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.star-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.action-link {
+    display: inline-block;
+    padding: 8px 20px;
+    color: var(--text);
+    text-decoration: none;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.action-link:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-text {
+    margin-top: 0;
+}
+
 /* 动画 */
 @keyframes fadeInDown {
     from {
