@@ -1,0 +1,42 @@
+# Environment variables - CRITICAL: Never commit these!
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Output files and logs
+output/
+logs/
+*.log
+
+# Keep README files
+!README*.md
+!MULTILINGUAL.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+.claude/
+
+# Docker
+.dockerignore
+
+# Temporary files
+*.tmp
+*.bak
+*~

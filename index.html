@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepWiki Scraper - 文档抓取工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 语言切换器 -->
+        <div class="language-selector">
+            <select id="langSelector" onchange="setLanguage(this.value)">
+                <option value="zh-CN">简体中文</option>
+                <option value="zh-TW">繁體中文</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+
+        <!-- 头部 -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="18" fill="url(#gradient)" />
+                    <text x="20" y="27" text-anchor="middle" fill="white" font-size="20" font-weight="bold">DW</text>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1 data-i18n="title">DeepWiki Scraper</h1>
+            </div>
+            <p class="subtitle" data-i18n="subtitle">将 DeepWiki 项目文档抓取并合并为单个 Markdown 文件</p>
+        </header>
+
+        <!-- API 密钥配置 -->
+        <div class="card">
+            <h2 data-i18n="apiKeyTitle">🔑 API 密钥配置</h2>
+            <div class="api-keys-section">
+                <textarea 
+                    id="apiKeys" 
+                    data-i18n="apiKeyPlaceholder"
+                    placeholder="输入 Firecrawl API 密钥（多个密钥用逗号或换行分隔）&#10;例如：&#10;fc-key1&#10;fc-key2&#10;fc-key3"
+                    rows="4"
+                ></textarea>
+                <div class="key-info">
+                    <span id="keyCount">未配置密钥</span>
+                    <button id="clearKeys" class="btn-secondary" data-i18n="clearKeys">清除密钥</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- URL 输入 -->
+        <div class="card">
+            <h2 data-i18n="urlTitle">📝 输入项目地址</h2>
+            <div class="url-input-section">
+                <input 
+                    type="text" 
+                    id="projectUrl" 
+                    data-i18n="urlPlaceholder"
+                    placeholder="输入 DeepWiki URL 或简写形式（如：awslabs/cli-agent-orchestrator）"
+                    class="url-input"
+                />
+                <div class="url-examples">
+                    <span data-i18n="urlExample">示例：</span>
+                    <code onclick="document.getElementById('projectUrl').value='awslabs/cli-agent-orchestrator'">awslabs/cli-agent-orchestrator</code>
+                    <code onclick="document.getElementById('projectUrl').value='https://deepwiki.com/awslabs/cli-agent-orchestrator'">完整 URL</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- 高级选项 -->
+        <div class="card">
+            <h2 data-i18n="optionsTitle">⚙️ 高级选项</h2>
+            <div class="options-grid">
+                <div class="option-item">
+                    <label for="workers" data-i18n="workers">并发线程数</label>
+                    <input type="number" id="workers" value="3" min="1" max="10" />
+                </div>
+                <div class="option-item">
+                    <label for="delay" data-i18n="delay">请求延迟（秒）</label>
+                    <input type="number" id="delay" value="1.5" min="0.5" max="5" step="0.5" />
+                </div>
+            </div>
+        </div>
+
+        <!-- 开始按钮 -->
+        <button id="startBtn" class="btn-primary">
+            <span class="btn-icon">🚀</span>
+            <span data-i18n="startScraping">开始抓取</span>
+        </button>
+
+        <!-- 进度显示 -->
+        <div id="progressSection" class="card" style="display: none;">
+            <h2 data-i18n="progressTitle">📊 抓取进度</h2>
+            <div class="progress-stats">
+                <p><span data-i18n="completed">已完成</span>: <span id="currentProcessing">0</span> / <span id="totalPages">0</span> <span data-i18n="pages">页</span> (<span id="progressPercent">0</span>%)</p>
+                <p><span data-i18n="concurrentTasks">并行任务数</span>: <span id="concurrency">0</span></p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill">
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日志显示 -->
+        <div id="logSection" class="card log-card" style="display: none;">
+            <h3>
+                <span>📋 <span data-i18n="processingLog">处理日志</span></span>
+                <button id="clearLogBtn" class="btn-small" data-i18n="clearLog">清空</button>
+            </h3>
+            <div id="logContent" class="log-content"></div>
+        </div>
+
+        <!-- 结果显示 -->
+        <div id="resultSection" class="card result-card" style="display: none;">
+            <h2 data-i18n="resultTitle">✅ 抓取完成</h2>
+            <div class="result-stats">
+                <div class="stat-item">
+                    <span class="stat-label" data-i18n="projectName">项目名称</span>
+                    <span id="resultProject" class="stat-value">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label" data-i18n="totalPages">总页数</span>
+                    <span id="resultPages" class="stat-value">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label" data-i18n="fileSize">文件大小</span>
+                    <span id="resultSize" class="stat-value">-</span>
+                </div>
+            </div>
+            <button id="downloadBtn" class="btn-primary">
+                <span class="btn-icon">📥</span>
+                <span data-i18n="download">下载 Markdown 文件</span>
+            </button>
+        </div>
+
+        <!-- 错误显示 -->
+        <div id="errorSection" class="card error-card" style="display: none;">
+            <h2 data-i18n="errorTitle">❌ 抓取失败</h2>
+            <div id="errorMessage" class="error-message"></div>
+            <button onclick="location.reload()" class="btn-secondary" data-i18n="restart">重新开始</button>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p><span data-i18n="madeWith">Made with ❤️ by</span> Neo Sun | <a href="https://github.com/neosun100/deepwiki-scraper" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
