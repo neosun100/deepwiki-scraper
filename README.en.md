@@ -27,7 +27,7 @@ A tool to scrape and merge DeepWiki project documentation into a single Markdown
 
 ```bash
 # Clone repository
-git clone <your-repo-url>
+git clone https://github.com/neosun100/deepwiki-scraper.git
 cd deepwiki-scraper
 
 # Start with one command

@@ -28,7 +28,7 @@
 
 ```bash
 # 克隆仓库
-git clone <your-repo-url>
+git clone https://github.com/neosun100/deepwiki-scraper.git
 cd deepwiki-scraper
 
 # 一键启动

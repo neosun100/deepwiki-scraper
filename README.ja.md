@@ -27,7 +27,7 @@ DeepWiki プロジェクトドキュメントをスクレイピングして単�
 
 ```bash
 # リポジトリをクローン
-git clone <your-repo-url>
+git clone https://github.com/neosun100/deepwiki-scraper.git
 cd deepwiki-scraper
 
 # ワンコマンドで起動
