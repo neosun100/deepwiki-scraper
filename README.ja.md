@@ -1,6 +1,16 @@
 # DeepWiki Scraper
 
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/neosun100/deepwiki-scraper?style=social)](https://github.com/neosun100/deepwiki-scraper/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/neosun100/deepwiki-scraper?style=social)](https://github.com/neosun100/deepwiki-scraper/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/neosun100/deepwiki-scraper)](https://github.com/neosun100/deepwiki-scraper/issues)
+[![GitHub license](https://img.shields.io/github/license/neosun100/deepwiki-scraper)](https://github.com/neosun100/deepwiki-scraper/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/neosun100/deepwiki-scraper)](https://github.com/neosun100/deepwiki-scraper/commits/main)
+
 [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [English](README.en.md) | [日本語](README.ja.md)
+
+</div>
 
 ---
 
@@ -340,11 +350,35 @@ MIT License
 
 ## 📧 連絡先
 
-- GitHub Issues: [問題を報告](https://github.com/your-repo/issues)
-- Email: your-email@example.com
+- GitHub Issues: [問題を報告](https://github.com/neosun100/deepwiki-scraper/issues)
+- GitHub: [@neosun100](https://github.com/neosun100)
 
 ---
 
-**⭐ このプロジェクトが役に立った場合は、Starをお願いします！⭐**
+<div align="center">
 
-Made with ❤️ by Neo Sun
+### ⭐ スター履歴
+
+[![Star History Chart](https://api.star-history.com/svg?repos=neosun100/deepwiki-scraper&type=Date)](https://star-history.com/#neosun100/deepwiki-scraper&Date)
+
+</div>
+
+---
+
+<div align="center">
+
+## 🌟 スターをお願いします！🌟
+
+**このプロジェクトが役に立った場合は、GitHubで ⭐ スターをお願いします！**
+
+あなたのサポートが継続的な改善の最大の動機です！🚀
+
+[![GitHub stars](https://img.shields.io/github/stars/neosun100/deepwiki-scraper?style=social)](https://github.com/neosun100/deepwiki-scraper/stargazers)
+
+[⭐ このリポジトリにスター](https://github.com/neosun100/deepwiki-scraper) | [🐛 バグ報告](https://github.com/neosun100/deepwiki-scraper/issues) | [✨ 機能リクエスト](https://github.com/neosun100/deepwiki-scraper/issues)
+
+---
+
+Made with ❤️ by [Neo Sun](https://github.com/neosun100)
+
+</div>

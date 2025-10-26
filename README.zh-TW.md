@@ -1,6 +1,16 @@
 # DeepWiki Scraper
 
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/neosun100/deepwiki-scraper?style=social)](https://github.com/neosun100/deepwiki-scraper/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/neosun100/deepwiki-scraper?style=social)](https://github.com/neosun100/deepwiki-scraper/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/neosun100/deepwiki-scraper)](https://github.com/neosun100/deepwiki-scraper/issues)
+[![GitHub license](https://img.shields.io/github/license/neosun100/deepwiki-scraper)](https://github.com/neosun100/deepwiki-scraper/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/neosun100/deepwiki-scraper)](https://github.com/neosun100/deepwiki-scraper/commits/main)
+
 [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [English](README.en.md) | [日本語](README.ja.md)
+
+</div>
 
 ---
 
@@ -340,11 +350,35 @@ MIT License
 
 ## 📧 聯絡方式
 
-- GitHub Issues: [提交問題](https://github.com/your-repo/issues)
-- Email: your-email@example.com
+- GitHub Issues: [提交問題](https://github.com/neosun100/deepwiki-scraper/issues)
+- GitHub: [@neosun100](https://github.com/neosun100)
 
 ---
 
-**⭐ 如果這個專案對你有幫助，請給個 Star！⭐**
+<div align="center">
 
-Made with ❤️ by Neo Sun
+### ⭐ Star 歷史
+
+[![Star History Chart](https://api.star-history.com/svg?repos=neosun100/deepwiki-scraper&type=Date)](https://star-history.com/#neosun100/deepwiki-scraper&Date)
+
+</div>
+
+---
+
+<div align="center">
+
+## 🌟 給我們一個 Star！🌟
+
+**如果這個專案對你有幫助，請在 GitHub 上給它一個 ⭐ Star！**
+
+你的支持是我們持續改進的最大動力！🚀
+
+[![GitHub stars](https://img.shields.io/github/stars/neosun100/deepwiki-scraper?style=social)](https://github.com/neosun100/deepwiki-scraper/stargazers)
+
+[⭐ Star 本倉庫](https://github.com/neosun100/deepwiki-scraper) | [🐛 回報 Bug](https://github.com/neosun100/deepwiki-scraper/issues) | [✨ 請求新功能](https://github.com/neosun100/deepwiki-scraper/issues)
+
+---
+
+Made with ❤️ by [Neo Sun](https://github.com/neosun100)
+
+</div>
