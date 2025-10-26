@@ -1,0 +1,81 @@
+# Nginx 配置示例 - DeepWiki Scraper
+#
+# 使用方法：
+# 1. 复制此文件到 /etc/nginx/sites-available/deepwiki-scraper
+# 2. 修改 server_name 和 root 路径
+# 3. 创建软链接: sudo ln -s /etc/nginx/sites-available/deepwiki-scraper /etc/nginx/sites-enabled/
+# 4. 测试配置: sudo nginx -t
+# 5. 重启 nginx: sudo systemctl restart nginx
+
+server {
+    listen 80;
+    server_name your-domain.com;  # 修改为您的域名或 IP 地址
+
+    # 前端静态文件
+    location / {
+        root /root/deepwiki-merge;  # 修改为您的项目路径
+        index index.html;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # 反向代理后端 API
+    # 所有 /api/* 的请求会被转发到后端服务
+    location /api/ {
+        # 转发到后端服务（去掉 /api 前缀）
+        proxy_pass http://127.0.0.1:8003/;
+
+        # HTTP 版本和升级支持
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+
+        # 请求头设置
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # 缓存设置
+        proxy_cache_bypass $http_upgrade;
+
+        # 超时设置（抓取可能需要较长时间）
+        proxy_connect_timeout 600;
+        proxy_send_timeout 600;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
+
+    # 静态资源缓存
+    location /images/ {
+        root /root/deepwiki-merge;  # 修改为您的项目路径
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # CSS 和 JS 文件缓存
+    location ~ \.(css|js)$ {
+        root /root/deepwiki-merge;  # 修改为您的项目路径
+        expires 7d;
+        add_header Cache-Control "public";
+    }
+
+    # 压缩配置
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css text/xml text/javascript
+               application/x-javascript application/xml+rss
+               application/json application/javascript;
+}
+
+# 如果需要 HTTPS，可以添加以下配置
+# server {
+#     listen 443 ssl http2;
+#     server_name your-domain.com;
+#
+#     ssl_certificate /path/to/your/certificate.crt;
+#     ssl_certificate_key /path/to/your/private.key;
+#
+#     # 使用上面相同的 location 配置
+#     # ...
+# }

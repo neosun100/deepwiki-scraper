@@ -1,5 +1,8 @@
 // API 配置
-const API_BASE = 'http://localhost:8003';
+// 自动检测 API 地址：如果通过 nginx 访问则使用 /api，否则使用 localhost:8003
+const API_BASE = window.location.hostname === 'localhost' && window.location.port === '8002'
+    ? 'http://localhost:8003'
+    : '/api';
 const STORAGE_KEY = 'deepwiki_api_keys';
 
 // DOM 元素
