@@ -104,9 +104,13 @@ python deepwiki_scraper.py awslabs/cli-agent-orchestrator
 ### 2. API Key Management
 - **Auto-save**: Automatically saved to browser localStorage after input
 - **Remember Forever**: Auto-restore on page refresh, no need to re-enter
+- **Privacy First**: API keys are stored **only in your browser**, never sent to our server
+- **Permanent Storage**: Keys persist indefinitely unless you clear browser data
 - **Multi-key Support**: Support multiple keys, separated by comma or newline
 - **Load Balancing**: Automatically randomizes key order to distribute request load
 - **One-click Clear**: Can clear saved keys at any time
+
+**🔒 Security Note**: Your Firecrawl API keys are stored locally in your browser's localStorage and are never transmitted to or stored on our servers. This ensures maximum privacy and security for your credentials.
 
 ### 3. Real-time Progress Display
 - **Progress Bar**: Visual display of scraping progress
