@@ -16,7 +16,22 @@
 
 A tool to scrape and merge DeepWiki project documentation into a single Markdown file, supporting both command-line and Web interface.
 
-![Screenshot](screenshot.png)
+## 📸 User Interface
+
+<div align="center">
+
+![Web UI Screenshot](images/ui-screenshot.png)
+
+*Modern gradient-themed web interface with GitHub badges, API key management, and prominent star encouragement*
+
+</div>
+
+The web interface features:
+- 🎨 **Beautiful Design**: Purple gradient theme with smooth animations
+- 🌐 **Multi-language Support**: Switch between Chinese (Simplified/Traditional), English, and Japanese
+- 🔑 **API Key Management**: Persistent storage with multi-key support
+- 📊 **Real-time Progress**: Visual progress bar and detailed status updates
+- ⭐ **GitHub Integration**: Badges and star encouragement to engage the community
 
 ## ✨ Features
 

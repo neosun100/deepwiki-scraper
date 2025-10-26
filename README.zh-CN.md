@@ -16,7 +16,22 @@
 
 将 DeepWiki 项目文档抓取并合并为单个 Markdown 文件的工具，支持命令行和 Web 界面。
 
-![Screenshot](screenshot.png)
+## 📸 用户界面
+
+<div align="center">
+
+![Web UI 截图](images/ui-screenshot.png)
+
+*现代化渐变色主题的 Web 界面，配有 GitHub 徽章、API 密钥管理和醒目的 Star 引导*
+
+</div>
+
+Web 界面特色：
+- 🎨 **精美设计**：紫色渐变主题，流畅的动画效果
+- 🌐 **多语言支持**：支持简体中文、繁体中文、英语和日语切换
+- 🔑 **API 密钥管理**：持久化存储，支持多密钥配置
+- 📊 **实时进度**：可视化进度条和详细状态更新
+- ⭐ **GitHub 集成**：徽章和 Star 引导，促进社区参与
 
 ## ✨ 功能特性
 
